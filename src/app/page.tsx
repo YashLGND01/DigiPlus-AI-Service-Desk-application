@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 30;
 
+
 async function getStats() {
   const [total, open, inProgress, critical, resolved] = await Promise.all([
     db.incident.count(),
@@ -36,15 +37,15 @@ interface StatCardProps {
 
 function StatCard({ label, value, icon, color }: StatCardProps) {
   const colors = {
-    blue:    { bg: "bg-blue-50",    text: "text-blue-600",    iconBg: "bg-blue-100"    },
-    amber:   { bg: "bg-amber-50",   text: "text-amber-600",   iconBg: "bg-amber-100"   },
-    red:     { bg: "bg-red-50",     text: "text-red-600",     iconBg: "bg-red-100"     },
-    emerald: { bg: "bg-emerald-50", text: "text-emerald-600", iconBg: "bg-emerald-100" },
+    blue:    { text: "text-blue-600",    iconBg: "bg-blue-100"    },
+    amber:   { text: "text-amber-600",   iconBg: "bg-amber-100"   },
+    red:     { text: "text-red-600",     iconBg: "bg-red-100"     },
+    emerald: { text: "text-emerald-600", iconBg: "bg-emerald-100" },
   };
   const c = colors[color];
 
   return (
-    <div className={`rounded-xl border border-surface-200 bg-white p-5 shadow-card animate-slide-up`}>
+    <div className="rounded-xl border border-surface-200 bg-white p-5 shadow-card animate-slide-up">
       <div className="flex items-start justify-between">
         <div>
           <p className="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-2">
@@ -59,6 +60,8 @@ function StatCard({ label, value, icon, color }: StatCardProps) {
     </div>
   );
 }
+
+
 
 export default async function DashboardPage() {
   const [stats, incidents] = await Promise.all([getStats(), getIncidents()]);
@@ -101,6 +104,7 @@ export default async function DashboardPage() {
             <span className="font-semibold text-gray-700">{stats.open}</span> open
             {" · "}triaged by AI in real time ⚡
           </p>
+
 
           {/* Primary CTA — orange, this is its one home on the dashboard */}
           <Link
@@ -159,6 +163,7 @@ export default async function DashboardPage() {
           }
         />
       </div>
+
 
       {/* ── Incident list ─────────────────────────────────────────────── */}
       <div>
