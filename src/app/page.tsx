@@ -12,59 +12,12 @@ export const metadata: Metadata = {
 
 export const revalidate = 30;
 
-
-async function getStats() {
-  const [total, open, inProgress, critical, resolved] = await Promise.all([
-    db.incident.count(),
-    db.incident.count({ where: { status: "Open" } }),
-    db.incident.count({ where: { status: "In Progress" } }),
-    db.incident.count({ where: { priority: "Critical" } }),
-    db.incident.count({ where: { status: "Resolved" } }),
-  ]);
-  return { total, open, inProgress, critical, resolved };
-}
-
 async function getIncidents() {
   return db.incident.findMany({ orderBy: { createdAt: "desc" } });
 }
 
-interface StatCardProps {
-  label: string;
-  value: number;
-  icon: React.ReactNode;
-  color: "blue" | "amber" | "red" | "emerald";
-}
-
-function StatCard({ label, value, icon, color }: StatCardProps) {
-  const colors = {
-    blue:    { text: "text-blue-600",    iconBg: "bg-blue-100"    },
-    amber:   { text: "text-amber-600",   iconBg: "bg-amber-100"   },
-    red:     { text: "text-red-600",     iconBg: "bg-red-100"     },
-    emerald: { text: "text-emerald-600", iconBg: "bg-emerald-100" },
-  };
-  const c = colors[color];
-
-  return (
-    <div className="rounded-xl border border-surface-200 bg-white p-5 shadow-card animate-slide-up">
-      <div className="flex items-start justify-between">
-        <div>
-          <p className="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-2">
-            {label}
-          </p>
-          <p className="text-3xl font-bold text-surface-900">{value}</p>
-        </div>
-        <div className={`w-10 h-10 rounded-lg ${c.iconBg} flex items-center justify-center ${c.text}`}>
-          {icon}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-
-
 export default async function DashboardPage() {
-  const [stats, incidents] = await Promise.all([getStats(), getIncidents()]);
+  const incidents = await getIncidents();
 
   return (
     <div className="space-y-8">
@@ -97,15 +50,6 @@ export default async function DashboardPage() {
             AI-Powered Service Desk
           </h1>
 
-          {/* Live stats line */}
-          <p className="text-gray-500 text-sm mt-0.5">
-            <span className="font-semibold text-gray-700">{stats.total}</span> total incidents
-            {" · "}
-            <span className="font-semibold text-gray-700">{stats.open}</span> open
-            {" · "}triaged by AI in real time ⚡
-          </p>
-
-
           {/* Primary CTA — orange, this is its one home on the dashboard */}
           <Link
             href="/incidents/new"
@@ -119,51 +63,6 @@ export default async function DashboardPage() {
           </Link>
         </div>
       </section>
-
-      {/* ── Stat cards ────────────────────────────────────────────────── */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard
-          label="Open"
-          value={stats.open}
-          color="blue"
-          icon={
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
-            </svg>
-          }
-        />
-        <StatCard
-          label="In Progress"
-          value={stats.inProgress}
-          color="amber"
-          icon={
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
-          }
-        />
-        <StatCard
-          label="Critical"
-          value={stats.critical}
-          color="red"
-          icon={
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-            </svg>
-          }
-        />
-        <StatCard
-          label="Resolved"
-          value={stats.resolved}
-          color="emerald"
-          icon={
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
-          }
-        />
-      </div>
-
 
       {/* ── Incident list ─────────────────────────────────────────────── */}
       <div>
