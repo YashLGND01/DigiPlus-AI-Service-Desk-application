@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Incident {
+  id                  String    @id @default(cuid())
+  title               String
+  description         String
+  reporterName        String?
+  status              String    @default("Open") // Open | In Progress | Resolved | Closed
+  category            String?
+  priority            String?   // Low | Medium | High | Critical
+  sentiment           String?
+  aiSummary           String?
+  aiSuggestedSteps    String?   // JSON string[]
+  aiKbMatches         String?   // JSON [{kbArticleId, relevance, reason}]
+  aiSimilarIncidents  String?   // JSON [{incidentId, similarity, reason}]
+  aiConfidence        Float?
+  aiAnalysisStatus    String    @default("Pending") // Pending | Done | Failed
+  resolutionNotes     String?
+  resolvedAt          DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+}
+
+model KBArticle {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  category  String?
+  tags      String?  // JSON string[]
+  createdAt DateTime @default(now())
+}

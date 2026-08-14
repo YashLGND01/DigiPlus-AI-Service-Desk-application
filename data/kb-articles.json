@@ -1,0 +1,107 @@
+[
+  {
+    "id": "kb-001",
+    "title": "How to Reset Your Password",
+    "content": "If you've forgotten your password or need to reset it, follow these steps:\n1. Navigate to the login page and click 'Forgot Password'.\n2. Enter your registered email address and click 'Send Reset Link'.\n3. Check your email (including spam/junk) for a reset link — it expires in 30 minutes.\n4. Click the link and enter a new password meeting the complexity requirements: at least 8 characters, one uppercase, one number, one special character.\n5. If you did not receive the email, contact IT Support at support@company.com.\n6. For accounts locked after too many failed attempts, see the 'Account Lockout' article.",
+    "category": "Account",
+    "tags": "[\"password\", \"reset\", \"login\", \"credentials\", \"forgot password\"]"
+  },
+  {
+    "id": "kb-002",
+    "title": "VPN Connection Troubleshooting Guide",
+    "content": "This article covers common VPN issues and their resolutions.\n\nCannot connect to VPN:\n- Verify your internet connection is active.\n- Ensure you are using the correct VPN client (GlobalProtect v6.2+ for Windows, v6.0+ for macOS).\n- Check that your corporate credentials are up-to-date — VPN uses your Active Directory password.\n- Try disconnecting and reconnecting.\n- Restart the VPN client service: open Services, find 'PanGPS', restart it.\n\nSlow VPN speeds:\n- Switch to the nearest gateway (use the gateway selector in the VPN client).\n- Close bandwidth-heavy applications when on VPN.\n- Check if split tunneling is enabled — contact IT if needed.\n\nVPN drops frequently:\n- Check your local network stability.\n- Update your VPN client to the latest version.\n- If on Wi-Fi, try a wired connection.",
+    "category": "Network",
+    "tags": "[\"vpn\", \"network\", \"remote access\", \"globalprotect\", \"connectivity\"]"
+  },
+  {
+    "id": "kb-003",
+    "title": "Billing Discrepancy and Invoice Dispute Process",
+    "content": "If you believe you have been incorrectly charged or your invoice does not match your records:\n1. Gather supporting documents: your contract, previous invoices, and any approval emails.\n2. Log into the billing portal at billing.company.com and navigate to 'My Invoices'.\n3. Click on the invoice in question and select 'Dispute this Invoice'.\n4. Describe the discrepancy clearly and attach supporting documents.\n5. Our billing team will review within 3–5 business days.\n6. For urgent billing issues (service suspension risk), call the billing hotline: 1-800-555-0199.\n7. Refunds, if approved, are processed within 7–10 business days to the original payment method.",
+    "category": "Billing",
+    "tags": "[\"billing\", \"invoice\", \"dispute\", \"refund\", \"overcharge\", \"payment\"]"
+  },
+  {
+    "id": "kb-004",
+    "title": "Software Installation Failure — Common Causes and Fixes",
+    "content": "If a software installation fails, follow this diagnostic process:\n\n1. Check system requirements — verify OS version, available disk space (minimum 5 GB free), and RAM.\n2. Run the installer as Administrator — right-click the installer and select 'Run as administrator'.\n3. Disable antivirus temporarily during installation (re-enable immediately after).\n4. Check for conflicting software — some applications conflict with existing installs (e.g., multiple antivirus programs).\n5. Download a fresh copy of the installer — corrupted downloads are common.\n6. Review the installation log at %TEMP%\\install.log for specific error codes.\n7. If error code 1603 appears, see KB-011 (MSI 1603 Error Resolution).\n8. For enterprise-deployed software, contact IT to push the install remotely via SCCM.",
+    "category": "Software",
+    "tags": "[\"software\", \"installation\", \"install failure\", \"error\", \"setup\"]"
+  },
+  {
+    "id": "kb-005",
+    "title": "Hardware Replacement Request Process",
+    "content": "If your hardware (laptop, monitor, keyboard, mouse, etc.) is malfunctioning or end-of-life:\n1. Submit a Hardware Replacement Request via the IT portal at it.company.com/hardware.\n2. Include: your employee ID, asset tag of the current device, description of the fault, and business justification.\n3. IT will assess the request within 2 business days.\n4. Approved replacements for critical roles are fulfilled within 48 hours; standard requests within 1–2 weeks.\n5. For critical failures (device completely non-functional), call IT emergency line: ext. 5555.\n6. Loaner devices are available for business-critical employees during replacement processing.\n7. Return the old device to IT for secure data wiping before disposal.",
+    "category": "Hardware",
+    "tags": "[\"hardware\", \"replacement\", \"laptop\", \"monitor\", \"device\", \"broken\"]"
+  },
+  {
+    "id": "kb-006",
+    "title": "Access and Permissions Request Guide",
+    "content": "To request access to systems, folders, or applications:\n1. Navigate to the Access Request Portal at it.company.com/access.\n2. Select the resource you need access to from the dropdown.\n3. Choose the access level required (Read, Write, Admin).\n4. Provide a business justification — requests without justification are automatically rejected.\n5. Your manager will receive an approval email; they must approve within 5 business days.\n6. Once approved, access is provisioned within 4 business hours.\n7. Emergency access requests can be escalated by your VP to the IT Security team.\n8. Access is reviewed quarterly — ensure you have valid need for all granted permissions.",
+    "category": "Access",
+    "tags": "[\"access\", \"permissions\", \"authorization\", \"role\", \"system access\", \"folder access\"]"
+  },
+  {
+    "id": "kb-007",
+    "title": "Account Lockout — Immediate Resolution Steps",
+    "content": "If your account is locked (usually after 5 failed login attempts within 15 minutes):\n\nSelf-Service (fastest):\n1. Go to account.company.com/unlock\n2. Verify your identity via your registered phone number (SMS code)\n3. Your account will be unlocked immediately\n\nIT Support:\n1. Call IT Helpdesk at ext. 4000 or 1-800-555-0100\n2. Verify your identity (employee ID + last 4 of SSN)\n3. IT can unlock remotely in under 2 minutes\n\nPreventing Future Lockouts:\n- Ensure your phone/tablet is not auto-entering an old saved password\n- Update saved credentials in your browser password manager\n- After a password change, update credentials on all connected devices",
+    "category": "Account",
+    "tags": "[\"lockout\", \"account locked\", \"login\", \"authentication\", \"active directory\"]"
+  },
+  {
+    "id": "kb-008",
+    "title": "Email Not Syncing — Outlook and Mobile Troubleshooting",
+    "content": "If your email is not syncing or you are not receiving emails:\n\nOutlook Desktop:\n1. Check your internet/VPN connection.\n2. Click Send/Receive All Folders (F9).\n3. Check if Outlook is in Offline mode (bottom status bar — disable it).\n4. If Outlook shows 'Disconnected', restart the application.\n5. Run the Microsoft Support and Recovery Assistant (SARA) tool.\n\nOutlook Mobile:\n1. Force-close the app and reopen.\n2. Check that Background App Refresh is enabled.\n3. Remove and re-add the account in Settings.\n4. Ensure the app is updated to the latest version.\n\nIf none of these work, the issue may be server-side. Check the IT Status Page at status.company.com before submitting a ticket.",
+    "category": "Software",
+    "tags": "[\"email\", \"outlook\", \"sync\", \"exchange\", \"mail\", \"not receiving email\"]"
+  },
+  {
+    "id": "kb-009",
+    "title": "Network Printer Not Working — Setup and Troubleshooting",
+    "content": "If a network printer is not working or not visible:\n\nInitial Checks:\n1. Ensure the printer is powered on and has paper/toner.\n2. Confirm the printer is connected to the corporate network (not guest Wi-Fi).\n\nWindows Setup:\n1. Go to Settings → Devices → Printers & Scanners.\n2. Click 'Add a printer or scanner'.\n3. If not found automatically, click 'The printer I want isn't listed'.\n4. Select 'Add a printer using a TCP/IP address' and enter the printer's IP (found on the printer display).\n\nTroubleshooting:\n- Clear the print queue: open Services → Print Spooler → Restart.\n- Update printer drivers from the manufacturer's website.\n- For floor printers, check if others on your floor are also affected — it may be a network segment issue.",
+    "category": "Hardware",
+    "tags": "[\"printer\", \"printing\", \"network printer\", \"print spooler\", \"driver\"]"
+  },
+  {
+    "id": "kb-010",
+    "title": "Multi-Factor Authentication (MFA) Setup and Issues",
+    "content": "Setting up MFA:\n1. Go to mfa.company.com and sign in with your corporate credentials.\n2. Select 'Set up authenticator app' and follow the QR code scan instructions using Microsoft Authenticator or Google Authenticator.\n3. Enter the 6-digit code from the app to confirm setup.\n4. Save your backup codes in a secure location.\n\nMFA Issues:\n- Code not accepted: Ensure your phone's time is synced correctly (automatic time sync recommended).\n- Lost device: Contact IT immediately at ext. 4000. Temporary bypass codes are available for verified employees.\n- New phone: Re-enroll at mfa.company.com after IT verifies your identity.\n\nMFA is mandatory for all VPN connections, admin portals, and remote access systems.",
+    "category": "Access",
+    "tags": "[\"mfa\", \"two-factor\", \"2fa\", \"authenticator\", \"security\", \"login\"]"
+  },
+  {
+    "id": "kb-011",
+    "title": "Remote Desktop Connection Issues",
+    "content": "If you cannot connect to a remote desktop (RDP) session:\n\n1. Verify the target computer is powered on and connected to the network.\n2. Ensure Remote Desktop is enabled on the target: System Properties → Remote → Allow remote connections.\n3. Check Windows Firewall — Remote Desktop must be allowed through the firewall on the target machine.\n4. Confirm you have permission to RDP to that machine — contact your manager or IT if unsure.\n5. Use the correct hostname or IP address (avoid using display names).\n6. If connecting from outside the office, ensure VPN is connected first (see KB-002).\n7. Error 'CredSSP Encryption Oracle Remediation': apply Windows updates on both machines.\n8. For persistent issues, IT can enable RDP and set permissions remotely via SCCM.",
+    "category": "Network",
+    "tags": "[\"rdp\", \"remote desktop\", \"remote access\", \"connection\", \"terminal\"]"
+  },
+  {
+    "id": "kb-012",
+    "title": "Subscription and License Management",
+    "content": "Managing your software licenses and subscriptions:\n\nChecking your assigned licenses:\n1. Log into the License Portal at licenses.company.com.\n2. View all software assigned to your account under 'My Licenses'.\n\nRequesting a new license:\n1. Submit a Software License Request via the IT portal.\n2. Provide: software name, version, business justification, and manager approval.\n3. IT will procure and assign the license within 3–5 business days.\n\nReporting a license issue (activation failure):\n1. Note the license error code or message.\n2. Submit an incident with the error details and your license ID from the portal.\n3. Common issues: license tied to old machine (transfer needed), license expired, seat count exceeded.\n\nLicense transfers between employees: Submit a transfer request through the IT portal with both employee IDs.",
+    "category": "Software",
+    "tags": "[\"license\", \"subscription\", \"software license\", \"activation\", \"microsoft 365\"]"
+  },
+  {
+    "id": "kb-013",
+    "title": "Data Recovery and Backup Restoration",
+    "content": "If you have accidentally deleted files or need to recover data:\n\nOneDrive / SharePoint (Office 365):\n1. Check the Recycle Bin first — files remain there for 93 days.\n2. For version history: right-click the file → Version History → restore an earlier version.\n3. If deleted from Recycle Bin: IT can recover from the second-stage recycle bin within 93 days.\n\nLocal Files (C: Drive):\n1. IT performs nightly incremental backups of mapped network drives (not local C: drives).\n2. Save important work to your OneDrive or mapped H: drive — local C: drive is NOT backed up.\n3. For data recovery from a failed hard drive, submit a Hardware incident — physical recovery may be possible.\n\nBest Practice: Store all critical work in OneDrive or SharePoint, not on the local desktop.",
+    "category": "Technical",
+    "tags": "[\"backup\", \"recovery\", \"deleted files\", \"onedrive\", \"data loss\", \"restore\"]"
+  },
+  {
+    "id": "kb-014",
+    "title": "New Employee IT Onboarding Checklist",
+    "content": "Welcome! Here's what IT sets up for every new employee and what you need to do:\n\nIT Provisions Automatically:\n- Corporate email account\n- Active Directory account\n- Laptop (standard configuration)\n- Badge access to office floors\n- Microsoft 365 license\n\nYou Must Complete:\n1. Set your password at account.company.com/firstlogin (link sent to personal email).\n2. Set up MFA at mfa.company.com (see KB-010).\n3. Install required software via the Software Center (search 'Software Center' in Start Menu).\n4. Complete Security Awareness Training at training.company.com within 7 days.\n5. Request any additional system access via the Access Request Portal (see KB-006).\n\nIf anything in this list is missing after your first day, submit an onboarding incident and tag your IT contact.",
+    "category": "Account",
+    "tags": "[\"onboarding\", \"new employee\", \"setup\", \"first day\", \"provisioning\"]"
+  },
+  {
+    "id": "kb-015",
+    "title": "Performance Issues — Slow Computer Troubleshooting",
+    "content": "If your computer is running slowly:\n\nImmediate Steps:\n1. Restart your computer — clears memory and applies pending updates.\n2. Check Task Manager (Ctrl+Shift+Esc) for processes consuming high CPU or RAM.\n3. Close unused browser tabs and applications.\n4. Disable browser extensions that run in the background.\n\nMedium-Term Fixes:\n1. Check disk space — ensure C: drive has at least 10% free space (delete temp files via Disk Cleanup).\n2. Run a malware scan using the corporate endpoint security tool.\n3. Check if Windows updates are pending — updates often cause temporary slowdowns.\n4. Disconnect and reconnect from VPN if performance only drops when VPN is active.\n\nIf Performance Persists:\n- Submit a performance incident. IT may run remote diagnostics or schedule an OS refresh.\n- Machines older than 4 years may qualify for hardware replacement (see KB-005).",
+    "category": "Technical",
+    "tags": "[\"performance\", \"slow computer\", \"lagging\", \"cpu\", \"memory\", \"ram\"]"
+  }
+]
