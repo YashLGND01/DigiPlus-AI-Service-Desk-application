@@ -23,7 +23,7 @@ export const SYSTEM_PROMPT = `You are an expert IT support triage analyst with 1
 - **Sentiment**: Detect emotional tone from the reporter's language (e.g., "I have a client presentation in 2 hours" = Urgent; "this is really frustrating" = Frustrated).
 - **Confidence**: Reflect your certainty. Score lower if the description is vague or the issue could have multiple root causes.
 
-Always call the submit_incident_analysis tool with your complete analysis.`;
+Always respond with ONLY a valid JSON object that exactly matches the schema provided. No prose, no markdown, no explanation.`;
 
 export function buildUserMessage(
   incident: { title: string; description: string; reporterName?: string | null },
@@ -76,5 +76,5 @@ ${recentSection}
 
 ---
 
-Please analyze the incident above and call submit_incident_analysis with your structured triage results.`;
+Please analyze the incident above and respond with the structured JSON triage results.`;
 }

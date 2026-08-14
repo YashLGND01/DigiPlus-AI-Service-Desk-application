@@ -66,7 +66,7 @@ export function AIAnalysisPanel({ incident, onReanalyzed }: AIAnalysisPanelProps
             <Spinner size="lg" />
             <p className="text-surface-700 font-medium">AI is analyzing this incident…</p>
             <p className="text-sm text-surface-400">
-              Gemini is triaging the incident, matching KB articles, and checking for duplicates.
+              Groq is triaging the incident, matching KB articles, and checking for duplicates.
             </p>
           </div>
         </div>

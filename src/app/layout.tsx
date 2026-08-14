@@ -101,7 +101,6 @@ export default function RootLayout({
             <span className="font-medium text-surface-500">
               DigiPlus IT &mdash; AI Service Desk
             </span>
-            <span>Powered by Gemini · SQLite via Prisma · Next.js</span>
           </div>
         </footer>
       </body>

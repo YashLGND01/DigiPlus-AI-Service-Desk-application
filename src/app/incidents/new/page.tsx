@@ -24,7 +24,7 @@ export default function NewIncidentPage() {
       <div>
         <h1 className="text-2xl font-bold text-surface-900">Submit New Incident</h1>
         <p className="text-surface-500 text-sm mt-1">
-          Describe your issue below. Gemini AI will automatically triage it — assigning category, priority, and suggesting resolution steps.
+          Describe your issue below. Groq AI will automatically triage it — assigning category, priority, and suggesting resolution steps.
         </p>
       </div>
 

@@ -99,7 +99,7 @@ export default async function DashboardPage() {
             <span className="font-semibold text-gray-700">{stats.total}</span> total incidents
             {" · "}
             <span className="font-semibold text-gray-700">{stats.open}</span> open
-            {" · "}triaged by Gemini in real time ⚡
+            {" · "}triaged by AI in real time ⚡
           </p>
 
           {/* Primary CTA — orange, this is its one home on the dashboard */}
