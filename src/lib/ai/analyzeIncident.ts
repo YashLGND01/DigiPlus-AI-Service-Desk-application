@@ -103,7 +103,7 @@ export async function analyzeIncident(
 
     // 📡 Call Groq with JSON mode enabled
     const completion = await groqClient.chat.completions.create({
-      model: "llama-3.3-70b-versatile",
+      model: "llama-3.1-8b-instant",
       response_format: { type: "json_object" },
       messages: [
         {
